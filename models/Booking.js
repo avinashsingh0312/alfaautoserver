@@ -25,12 +25,25 @@ const bookingSchema = new mongoose.Schema({
   note: String,
   isAccepted: {
     type: Boolean,
-    default: false,  // Changed to boolean with default false
+    default: false,
+  },
+  isDeclined: {
+    type: Boolean,
+    default: false,
   },
   isCompleted: {
     type: Boolean,
-    default: false,  // Added new field isCompleted with default false
+    default: false,
   },
+  isInComplete: {
+    type: Boolean,
+    default: false,
+  },
+  washPilot: {
+    name: String,
+    mobileNumber: String,
+  },
+  reasonToDecline: String,  
 }, { timestamps: true });
 
 module.exports = mongoose.model("Booking", bookingSchema);

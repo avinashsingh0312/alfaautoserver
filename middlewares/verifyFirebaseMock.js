@@ -9,8 +9,8 @@ const verifyFirebaseToken = async (req, res, next) => {
   
     // Mock user (simulate Firebase response)
     req.user = {
-      uid: "mock-uid-456",
-      phone_number: "+918888888888"
+      uid: "mock-uid-789",
+      phone_number: "+917777777777"
     };
   
     next();
