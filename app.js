@@ -10,7 +10,7 @@ const bookingRoutes = require("./routes/bookingRoutes");
 const mongoose = require("mongoose");
 
 
-dotenv.config();
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());

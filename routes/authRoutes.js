@@ -1,15 +1,11 @@
 const express = require("express");
-const { login, protectedRoute } = require("../controllers/authController");
-const verifyFirebaseToken = require("../middlewares/verifyFirebaseMock");
+const { sendOTP, verifyOTP, protectedRoute } = require("../controllers/authController");
 const authenticateJWT = require("../middlewares/authenticateJWT");
-
 
 const router = express.Router();
 
-router.post("/login", verifyFirebaseToken, login);
+router.post("/send-otp", sendOTP);
+router.post("/verify-otp", verifyOTP); // generates JWT
 router.get("/protected", authenticateJWT, protectedRoute);
-
-
-
 
 module.exports = router;
