@@ -8,6 +8,7 @@ const bookingRoutes = require("./routes/bookingRoutes");
 
 
 const mongoose = require("mongoose");
+const { getAllServices } = require("./controllers/serviceController");
 
 
 require("dotenv").config();
