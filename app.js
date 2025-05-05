@@ -8,7 +8,6 @@ const bookingRoutes = require("./routes/bookingRoutes");
 
 
 const mongoose = require("mongoose");
-const { getAllServices } = require("./controllers/serviceController");
 
 
 require("dotenv").config();
@@ -27,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/services/services", getAllServices);
+app.use("/api/services/services", serviceRoutes);
 
 app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/bookings", bookingRoutes);
